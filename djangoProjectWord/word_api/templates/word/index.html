@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST">
+ <div>
+     {% csrf_token %}
+        <input type="text" name="search">
+      </div>
+      <p>
+        <button type="submit" > Define</button>
+      </p>
+    </div>
+    </form>
+        {% for word,definition,partOfspeech,synonyms,example,typeOf,syllablesNumber,syllablesList in wordInfo%}
+    <h1>Word:{{ word }}</h1>
+            <h1>definition:{{ definition }}</h1>
+            <h1>part of speech: {{ partOfspeech }}</h1>
+            <h1>synonyms: {{ synonyms}}</h1>
+            <h1>example: {{ example }}</h1>
+            <h1>type of: {{ typeOf }}</h1>
+            <h1>number of syllables: {{ syllablesNumber }}</h1>
+            <h1>list of syllables: {{ syllablesList }}</h1>
+{%endfor %}
+
+</body>
+</html>
